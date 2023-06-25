@@ -34,6 +34,21 @@
 			return root;
 		}
 
+		public bool Contains(int val)
+		{
+			return ContainsHelper(root, val);
+		}
+		private bool ContainsHelper(Node? root, int val)
+		{
+			if (root is null)
+				return false;
+
+			if (root.val == val)
+				return true;
+
+			return ContainsHelper(root.left, val) || ContainsHelper(root.right, val);
+		}
+
 		public void InOrderTraversal() => InOrderHelper(root);
 		private void InOrderHelper(Node? root)
 		{
@@ -94,6 +109,10 @@
 	{
 		static void Main(string[] args)
 		{
-		}
+			BST t = new();
+			t.Insert(3);
+			t.Insert(1);
+			t.Insert(5);
+        }
 	}
 }
