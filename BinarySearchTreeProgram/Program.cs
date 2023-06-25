@@ -55,18 +55,26 @@
 			PreOrderHelper(root.left);
 			PreOrderHelper(root.right);
         }
+
+		public void PostOrderTraversal() => PostOrderHelper(root);
+		private void PostOrderHelper(Node? root)
+		{
+			if (root is null)
+				return;
+
+			PostOrderHelper(root.left);
+			PostOrderHelper(root.right);
+            Console.Write(root.val + " ");
+        }
 	}
 	internal class Program
 	{
 		static void Main(string[] args)
 		{
 			BST t = new();
-			t.Insert(3);
-			t.Insert(4);
-			t.Insert(1);
-			t.Insert(0);
 			t.Insert(2);
-			t.PreOrderTraversal();
-        }
+			t.Insert(1);
+			t.Insert(3);
+		}
 	}
 }
