@@ -66,15 +66,34 @@
 			PostOrderHelper(root.right);
             Console.Write(root.val + " ");
         }
+
+		public void LevelOrderTraversal() => LevelOrderHelper(root);
+		private void LevelOrderHelper(Node? root)
+		{
+			if (root is null)
+				return;
+
+			Queue<Node> q = new();
+			q.Enqueue(root);
+
+			while (q.Count is not 0)
+			{
+				var node = q.Dequeue();
+
+				if (node.left is not null)
+					q.Enqueue(node.left);
+
+				if (node.right is not null)
+					q.Enqueue(node.right);
+
+                Console.Write($"{node.val} ");
+            }
+		}
 	}
 	internal class Program
 	{
 		static void Main(string[] args)
 		{
-			BST t = new();
-			t.Insert(2);
-			t.Insert(1);
-			t.Insert(3);
 		}
 	}
 }
