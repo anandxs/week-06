@@ -21,11 +21,7 @@
             root = null;
         }
 
-		public void Insert(int val)
-		{
-			root = InsertHelper(root, val);
-		}
-
+		public void Insert(int val) => root = InsertHelper(root, val);
 		private Node InsertHelper(Node? root, int val)
 		{
 			if (root is null)
@@ -38,11 +34,7 @@
 			return root;
 		}
 
-		public void InOrderTraversal()
-		{
-			InOrderHelper(root);
-		}
-
+		public void InOrderTraversal() => InOrderHelper(root);
 		private void InOrderHelper(Node? root)
 		{
 			if (root is null)
@@ -52,16 +44,29 @@
             Console.Write(root.val + " ");
 			InOrderHelper(root.right);
         }
+
+		public void PreOrderTraversal() => PreOrderHelper(root);
+		private void PreOrderHelper(Node? root)
+		{
+			if (root is null)
+				return;
+
+            Console.Write(root.val + " ");
+			PreOrderHelper(root.left);
+			PreOrderHelper(root.right);
+        }
 	}
 	internal class Program
 	{
 		static void Main(string[] args)
 		{
 			BST t = new();
-			t.Insert(2);
-			t.Insert(1);
 			t.Insert(3);
-			t.InOrderTraversal();
+			t.Insert(4);
+			t.Insert(1);
+			t.Insert(0);
+			t.Insert(2);
+			t.PreOrderTraversal();
         }
 	}
 }
