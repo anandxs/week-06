@@ -1,4 +1,6 @@
-﻿namespace BinarySearchTreeProgram
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace BinarySearchTreeProgram
 {
 	public class BST
 	{
@@ -32,6 +34,42 @@
 				root.right = InsertHelper(root.right, val);
 
 			return root;
+		}
+
+		public void Remove(int val)
+		{
+			root = RemoveHelper(root, val);
+		}
+
+		private Node? RemoveHelper(Node? root, int val)
+		{
+			if (root is null)
+				return root;
+
+			if (root.val > val)
+				root.left = RemoveHelper(root.left, val);
+			else if (root.val < val)
+				root.right = RemoveHelper(root.right, val);
+			else
+			{
+				if (root.left is null)
+					return root.right;
+				if (root.right is null)
+					return root.left;
+
+				root.val = MinValue(root.right);
+				root.right = RemoveHelper(root.right, root.val);
+			}
+
+			return root;
+		}
+
+		private int MinValue(Node? root)
+		{
+			while (root.left is not null)
+				root = root.left;
+
+			return root.val;
 		}
 
 		public bool Contains(int val)
@@ -113,6 +151,10 @@
 			t.Insert(3);
 			t.Insert(1);
 			t.Insert(5);
+			t.Remove(1);
+			t.Remove(3);
+			t.Remove(5);
+			t.InOrderTraversal();
         }
 	}
 }
