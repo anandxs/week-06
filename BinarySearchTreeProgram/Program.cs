@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace BinarySearchTreeProgram
+﻿namespace BinarySearchTreeProgram
 {
 	public class BST
 	{
@@ -147,14 +145,6 @@ namespace BinarySearchTreeProgram
 	{
 		static void Main(string[] args)
 		{
-			BST t = new();
-			t.Insert(3);
-			t.Insert(1);
-			t.Insert(5);
-			t.Remove(1);
-			t.Remove(3);
-			t.Remove(5);
-			t.InOrderTraversal();
         }
 	}
 }
