@@ -49,11 +49,11 @@
 				index = key[level] - 'a';
 				if (crawl.children[index] is null)
 					return false;
-				else
-					crawl = crawl.children[index];
+					
+				crawl = crawl.children[index];
 			}
 
-			return false;
+			return true;
 		}
 
 		public void Print()
@@ -98,6 +98,12 @@
 		static void Main(string[] args)
 		{
 			Trie t = new();
-        }
+			t.Insert("a");
+			t.Insert("abc");
+            Console.WriteLine(t.Search("a"));
+            Console.WriteLine(t.Search("abc"));
+            Console.WriteLine(t.Search("ab"));
+            Console.WriteLine(t.Search("abcd"));
+		}
 	}
 }
