@@ -56,6 +56,36 @@
 			return crawl.IsEndOfWord;
 		}
 
+		public void Remove(string key)
+		{
+			RemoveHelper(root, key, 0);
+		}
+
+		private TrieNode RemoveHelper(TrieNode node, string key, int depth)
+		{
+			if (node is null)
+				return node;
+
+			if (depth == key.Length)
+			{
+				if (node.IsEndOfWord)
+					node.IsEndOfWord = false;
+
+				if (IsLeafNode(node))
+					return null;
+
+				return node;
+			}
+
+			int index = key[depth] - 'a';
+			node.children[index] = RemoveHelper(node.children[index], key, depth + 1);
+
+			if (IsLeafNode(node) && !node.IsEndOfWord)
+				return null;
+
+			return node;
+		}
+
 		public void Print()
 		{
 			char[] str = new char[20];
@@ -98,12 +128,7 @@
 	{
 		static void Main(string[] args)
 		{
-			Trie t = new();
-			t.Insert("a");
-			t.Insert("abc");
-            Console.WriteLine(t.Search("a"));
-            Console.WriteLine(t.Search("abc"));
-            Console.WriteLine(t.Search("ab"));
+
 		}
 	}
 }
