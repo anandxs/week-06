@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace GraphProgram
+﻿namespace GraphProgram
 {
 	public class Graph
 	{
@@ -51,6 +49,15 @@ namespace GraphProgram
 					queue.Enqueue(neighbour);
             }
 		}
+
+		public void Print()
+		{
+			foreach (var entry in graph)
+			{
+				string neighbours = String.Join(", ", entry.Value);
+                Console.WriteLine($"{entry.Key} : {neighbours}");
+            }
+		}
     }
 	internal class Program
 	{
@@ -60,7 +67,7 @@ namespace GraphProgram
 			g.AddEdge(1, 4);
 			g.AddEdge(1, 2);
 			g.AddEdge(2, 3);
-			g.DFS(1);
+			g.Print();
 		}
 	}
 }
