@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearchTreeProgram", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeapProgram", "HeapProgram\HeapProgram.csproj", "{470710D5-8967-4717-AF17-7BA2A75F7169}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrieProgram", "TrieProgram\TrieProgram.csproj", "{0FB7C736-316A-4B36-8B3D-B2B2A6073A3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{470710D5-8967-4717-AF17-7BA2A75F7169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{470710D5-8967-4717-AF17-7BA2A75F7169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{470710D5-8967-4717-AF17-7BA2A75F7169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB7C736-316A-4B36-8B3D-B2B2A6073A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB7C736-316A-4B36-8B3D-B2B2A6073A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB7C736-316A-4B36-8B3D-B2B2A6073A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB7C736-316A-4B36-8B3D-B2B2A6073A3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
