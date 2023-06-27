@@ -6,7 +6,7 @@
 		{
 			int[] arr = { 5, 2, 7, 1, 3 };
 			//HeapSortAsc(arr);
-			HeapSortDesc(arr);
+			//HeapSortDesc(arr);
 			foreach (int i in arr)
 				Console.Write(i + " ");
 		}

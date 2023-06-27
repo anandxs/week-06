@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrieProgram", "TrieProgram\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeapSort", "HeapSort\HeapSort.csproj", "{FD4CFD9E-30FA-451F-A55E-AEA6266D9EBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphProgram", "GraphProgram\GraphProgram.csproj", "{5D97DF5C-FB88-4C6E-9AD0-69C0C8B2F71F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FD4CFD9E-30FA-451F-A55E-AEA6266D9EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD4CFD9E-30FA-451F-A55E-AEA6266D9EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD4CFD9E-30FA-451F-A55E-AEA6266D9EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D97DF5C-FB88-4C6E-9AD0-69C0C8B2F71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D97DF5C-FB88-4C6E-9AD0-69C0C8B2F71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D97DF5C-FB88-4C6E-9AD0-69C0C8B2F71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D97DF5C-FB88-4C6E-9AD0-69C0C8B2F71F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
