@@ -27,13 +27,28 @@
 				graph[v].Add(u);
 		}
 
-		public void DFS(int source)
+		public void RecursiveDFS(int source)
 		{
             Console.Write(source + " ");
 
 			foreach (int neighbour in graph[source])
-				DFS(neighbour);
+				RecursiveDFS(neighbour);
         }
+
+		public void IterativeDFS(int source)
+		{
+			Stack<int> stack = new();
+			stack.Push(source);
+
+			while (stack.Count > 0)
+			{
+				int current = stack.Pop();
+                Console.Write(current + " ");
+
+                foreach (int neighbour in graph[current])
+					stack.Push(neighbour);
+			}
+		}
 
 		public void BFS(int source)
 		{
@@ -63,11 +78,6 @@
 	{
 		static void Main(string[] args)
 		{
-			Graph g = new();
-			g.AddEdge(1, 4);
-			g.AddEdge(1, 2);
-			g.AddEdge(2, 3);
-			g.Print();
-		}
+        }
 	}
 }
