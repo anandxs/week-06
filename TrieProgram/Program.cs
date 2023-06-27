@@ -63,6 +63,7 @@
 
 			PrintHelper(root, str, level);
 		}
+
 		private void PrintHelper(TrieNode node, char[] str, int level)
 		{
 			if (IsLeafNode(node) || node.IsEndOfWord)
@@ -103,7 +104,6 @@
             Console.WriteLine(t.Search("a"));
             Console.WriteLine(t.Search("abc"));
             Console.WriteLine(t.Search("ab"));
-            Console.WriteLine(t.Search("abcd"));
 		}
 	}
 }
