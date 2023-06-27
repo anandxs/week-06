@@ -53,7 +53,7 @@
 				crawl = crawl.children[index];
 			}
 
-			return true;
+			return crawl.IsEndOfWord;
 		}
 
 		public void Print()
