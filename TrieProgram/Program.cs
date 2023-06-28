@@ -128,7 +128,15 @@
 	{
 		static void Main(string[] args)
 		{
-
-		}
+			Trie t = new();
+			t.Insert("and");
+			t.Insert("ant");
+			t.Insert("cat");
+            Console.WriteLine(t.Search("a"));
+            Console.WriteLine(t.Search("and"));
+            Console.WriteLine();
+			t.Remove("and");
+			t.Print();
+        }
 	}
 }

@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Security.Principal;
-
-namespace HeapProgram
+﻿namespace HeapProgram
 {
 	public class MinHeap
 	{

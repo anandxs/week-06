@@ -1,4 +1,6 @@
-﻿namespace BinarySearchTreeProgram
+﻿using System.Threading.Channels;
+
+namespace BinarySearchTreeProgram
 {
 	public class BST
 	{
@@ -140,11 +142,48 @@
                 Console.Write($"{node.val} ");
             }
 		}
+
+		private int minDiffKey;
+		private int minDiff = int.MaxValue;
+
+		public int ClosestValue(int val)
+		{
+			ClosestHelper(root, val);
+			return minDiffKey;
+		}
+
+		private void ClosestHelper(Node? root, int val)
+		{
+			if (root is null)
+				return;
+
+			if (root.val == val)
+				minDiffKey = val;
+
+			if (minDiff > Math.Abs(root.val - val))
+			{
+				minDiff = Math.Abs(root.val - val);
+				minDiffKey = root.val;
+			}
+
+			if (val < root.val)
+				ClosestHelper(root.left, val);
+
+			if (val > root.val)
+				ClosestHelper(root.right, val);
+		}
 	}
 	internal class Program
 	{
 		static void Main(string[] args)
 		{
+			BST t = new();
+			t.Insert(5);
+			t.Insert(2);
+			t.Insert(7);
+			t.InOrderTraversal();
+            Console.WriteLine();
+            Console.WriteLine(t.ClosestValue(4));
         }
 	}
 }

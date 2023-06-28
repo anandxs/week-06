@@ -78,6 +78,16 @@
 	{
 		static void Main(string[] args)
 		{
+			Graph g = new();
+			g.AddEdge(1, 2);
+			g.AddEdge(1, 3);
+			g.AddEdge(2, 4);
+			g.AddEdge(4, 3);
+            Console.WriteLine("Depth First Search (DFS)");
+            g.RecursiveDFS(1);
+            Console.WriteLine();
+            Console.WriteLine("Breadth First Search (BFS)");
+			g.BFS(1);
         }
 	}
 }
