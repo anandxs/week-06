@@ -111,6 +111,61 @@
 			for (int i = 0; i < size; i++)
 				Console.Write($"{heap[i]} ");
         }
+
+		public bool IsHeap(int[] arr)
+		{
+			int size = arr.Length;
+			int lastIndex = arr.Length - 1;
+			int firstParent = 0;
+			int lastParent = (lastIndex - 1) / 2;
+
+			for (int i = firstParent; i <= lastParent; i++)
+			{
+				int leftIndex = 2 * i + 1;
+				int rightIndex = 2 * i + 2;
+
+				if (leftIndex < size && arr[i] > arr[leftIndex])
+					return false;
+
+				if (rightIndex < size && arr[i] > arr[rightIndex])
+					return false;
+			}
+
+			return true;
+		}
+
+		public bool IsHeap(Node? root)
+		{
+			if (root is null)
+				return false;
+
+			if (root.left is null && root.right is null)
+				return true;
+
+			if (root.left is null && root.right is not null)
+				return false;
+
+			if (root.left is not null && root.left.val < root.val)
+				return false;
+
+			if (root.right is not null && root.right.val < root.val)
+				return false;
+
+			return IsHeap(root.left) && IsHeap(root.right);
+		}
+    }
+
+	public class Node
+	{
+		public int val;
+		public Node? left;
+		public Node? right;
+
+        public Node(int val)
+        {
+			this.val = val;
+			left = right = null;
+        }
     }
 
 	public class MaxHeap
@@ -232,10 +287,12 @@
 		static void Main(string[] args)
 		{
 			MinHeap h = new();
-			int[] arr = new int[] { 1, 2, 3, -1 };
-			h.Build(arr);
-			foreach (int i in arr)
-                Console.Write(i + " ");
+			Node root = new Node(-8);
+			root.left = new Node(-9);
+			root.right = new Node(7);
+			root.right.left = new Node(6);
+			root.right.right = new Node(17);
+            Console.WriteLine(h.IsHeap(root));
         }
 	}
 }
